@@ -88,7 +88,6 @@ nav a:hover, nav a.active {
   color: var(--light-text);
   border-radius: 8px;
   font-size: 14px;
-  placeholder: var(--light-text);
   margin-bottom: 12px;
 }
 
@@ -394,4 +393,3 @@ nav a:hover, nav a.active {
     padding: 5px 10px;
   }
 }
-
