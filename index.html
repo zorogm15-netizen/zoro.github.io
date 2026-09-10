@@ -3,31 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقعي الأول</title>
+    <title>واجهة احترافية</title>
     <style>
-        body {
-            font-family: system-ui, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f9;
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #0f172a;
+            --text-secondary: #475569;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --border: #e2e8f0;
         }
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+        [data-theme="dark"] {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .theme-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
             text-align: center;
+            padding: 4rem 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Grid Cards */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>مرحباً بك! 👋</h1>
-        <p>تم نشر هذا الموقع بنجاح عبر GitHub Pages.</p>
+
+    <nav>
+        <div class="logo">موقعي</div>
+        <button class="theme-btn" onclick="toggleTheme()">🌙 الوضع الليلي</button>
+    </nav>
+
+    <section class="hero">
+        <h1>أهلاً بك في واجهتك الجديدة</h1>
+        <p>تصميم حديث ومتجاوب تماماً مع كافة الشاشات والأجهزة.</p>
+        <a href="#" class="btn">استكشف المزيد</a>
+    </section>
+
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <h3>⚡ سريع وخفيف</h3>
+                <p>مبني باستخدام HTML و CSS صفيين للحصول على أعلى أداء.</p>
+            </div>
+            <div class="card">
+                <h3>📱 متجاوب</h3>
+                <p>يتأقلم التنسيق تلقائياً مع أجهزة الموبايل والحاسوب.</p>
+            </div>
+            <div class="card">
+                <h3>🎨 مخصص</h3>
+                <p>يدعم التبديل السلس بين الوضع الفاتح والداكن.</p>
+            </div>
+        </div>
     </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.querySelector('.theme-btn');
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                btn.textContent = '🌙 الوضع الليلي';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                btn.textContent = '☀️ الوضع الفاتح';
+            }
+        }
+    </script>
 </body>
 </html>
-
