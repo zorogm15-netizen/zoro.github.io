@@ -8,12 +8,10 @@
 </head>
 <body>
     <!-- رأس الموقع -->
-    <header class="header">
+    <header>
         <div class="container">
-            <div class="logo">
-                <h1>✨ قصص النور</h1>
-            </div>
-            <nav class="navbar">
+            <h1>✨ قصص النور</h1>
+            <nav>
                 <ul>
                     <li><a href="#home">الرئيسية</a></li>
                     <li><a href="#stories">الروايات</a></li>
@@ -39,7 +37,7 @@
     <section id="stories" class="stories">
         <div class="container">
             <h2>أحدث الروايات</h2>
-            
+
             <!-- شريط البحث والتصفية -->
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="ابحث عن رواية..." onkeyup="filterStories()">
@@ -71,34 +69,12 @@
 
     <!-- قسم عن الموقع -->
     <section id="about" class="about">
-        <div class="container">
-            <h2>عن موقع قصص النور</h2>
-            <p>منصة رقمية متخصصة في نشر وتوزيع الروايات العربية والمترجمة، توفر تجربة قراءة ممتعة وسهلة مع مكتبة ضخمة من أفضل الأعمال الأدبية.</p>
-        </div>
+        <h2>عن موقع قصص النور</h2>
+        <p>منصة رقمية متخصصة في نشر وتوزيع الروايات العربية والمترجمة، توفر تجربة قراءة ممتعة وسهلة مع مكتبة ضخمة من أفضل الأعمال الأدبية.</p>
     </section>
 
     <!-- قسم التواصل -->
     <section id="contact" class="contact">
-        <div class="container">
-            <h2>تواصل معنا</h2>
-            <form id="contactForm" onsubmit="submitForm(event)">
-                <input type="text" placeholder="اسمك" required>
-                <input type="email" placeholder="بريدك الإلكتروني" required>
-                <textarea placeholder="رسالتك" rows="5" required></textarea>
-                <button type="submit" class="btn-primary">إرسال</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- التذييل -->
-    <footer class="footer">
-        <p>&copy; 2026 قصص النور. جميع الحقوق محفوظة</p>
-        <p>تم التطوير بواسطة Zoro</p>
-    </footer>
-
-    <script src="js/script.js"></script>
-</body>
-</html>
         <div class="container">
             <h2>تواصل معنا</h2>
             <form id="contactForm" onsubmit="submitForm(event)">
